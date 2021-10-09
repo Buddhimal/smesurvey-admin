@@ -181,11 +181,11 @@
 										<i class="fe-user"></i>
 										<span>Users</span></a>
 								</li>
-								<li>
-									<a href="<?php echo base_url(); ?>user/user/user_group_list">
-										<i class="fe-users"></i>
-										<span>User Groups</span></a>
-								</li>
+<!--								<li>-->
+<!--									<a href="--><?php //echo base_url(); ?><!--user/user/user_group_list">-->
+<!--										<i class="fe-users"></i>-->
+<!--										<span>User Groups</span></a>-->
+<!--								</li>-->
 							</ul>
 						</div>
 					</li>

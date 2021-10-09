@@ -33,7 +33,7 @@ foreach ($query->result() as $row) {
 }
 
 class FrontEnd{
-	const BASE_URL = "http://localhost:8888/wizard/uploads/";
+	const BASE_URL = "http://localhost:8888/smesurvey/uploads/";
 }
 
 

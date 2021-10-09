@@ -63,8 +63,9 @@ class Navigation extends CI_Controller
 
 	public function reports()
 	{
+		$res = $this->process_model->get_statistics();
 		$this->load->view('template/header');
-//		$this->load->view('patient/patient_list');
+		$this->load->view('report',$res);
 		$this->load->view('template/footer');
 	}
 
