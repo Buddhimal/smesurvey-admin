@@ -72,7 +72,7 @@ $error_text = "  text-danger ";
 									<div class="col pl-0">
 										<a href="<?php echo $file2_path ?>" <?php echo $file2_path != '#' ? 'download' : '' ?>
 										   class="font-weight-bold <?php echo $file2_path != '#' ? $success_text : $error_text ?>">File
-											A <?php echo $file1_path == '#' ? 'Not Uploaded' : '' ?></a>
+											A <?php echo $file2_path == '#' ? 'Not Uploaded' : '' ?></a>
 									</div>
 								</div> <!-- end row -->
 							</div> <!-- end .p-2-->
@@ -92,7 +92,7 @@ $error_text = "  text-danger ";
 									<div class="col pl-0">
 										<a href="<?php echo $file3_path ?>" <?php echo $file3_path != '#' ? 'download' : '' ?>
 										   class="font-weight-bold <?php echo $file3_path != '#' ? $success_text : $error_text ?>">File
-											2 <?php echo $file1_path == '#' ? 'Not Uploaded' : '' ?></a>
+											2 <?php echo $file3_path == '#' ? 'Not Uploaded' : '' ?></a>
 									</div>
 								</div> <!-- end row -->
 							</div> <!-- end .p-2-->

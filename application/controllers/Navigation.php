@@ -19,9 +19,7 @@ class Navigation extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('template/header');
-//		$this->load->view('users_upload');
-		$this->load->view('template/footer');
+		redirect('reports');
 	}
 
 	public function users()
@@ -40,16 +38,17 @@ class Navigation extends CI_Controller
 		$file1_path = "#";
 		$file2_path = "#";
 		$file3_path = "#";
-		if (isset($user_data['letter_confirm']))
-			$file1_path = FrontEnd::BASE_URL.'letter_file/' . $user_data['letter_confirm'];
 
-		if (isset($user_data['file_a']))
-			$file2_path = FrontEnd::BASE_URL.'file1/' . $user_data['file_a'];
+		if($user_data) {
+			if (($user_data['letter_confirm']))
+				$file1_path = FrontEnd::BASE_URL . 'letter_file/' . $user_data['letter_confirm'];
 
-		if (isset($user_data['file_b']))
-			$file3_path = FrontEnd::BASE_URL.'file2/' . $user_data['file_b'];
+			if (($user_data['file_a']))
+				$file2_path = FrontEnd::BASE_URL . 'file1/' . $user_data['file_a'];
 
-
+			if (($user_data['file_b']))
+				$file3_path = FrontEnd::BASE_URL . 'file2/' . $user_data['file_b'];
+		}
 
 		$data['user_data'] = $user_data;
 		$data['file1_path'] = $file1_path;
@@ -65,7 +64,7 @@ class Navigation extends CI_Controller
 	{
 		$res = $this->process_model->get_statistics();
 		$this->load->view('template/header');
-		$this->load->view('report',$res);
+		$this->load->view('report', $res);
 		$this->load->view('template/footer');
 	}
 

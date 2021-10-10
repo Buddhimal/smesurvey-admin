@@ -45,13 +45,19 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
+<style>
+	#sidebar-menu .menuitem-active .active {
+		color: #ffc107
+	}
+</style>
+
 <body class="loading">
 
 <!-- Begin page -->
 <div id="wrapper">
 
 	<!-- Topbar Start -->
-	<div class="navbar-custom">
+	<div class="navbar-custom"  style="background-color: #ffc107 !important;">
 		<div class="container-fluid">
 			<ul class="list-unstyled topnav-menu float-right mb-0">
 
@@ -149,9 +155,9 @@
 
 					<li class="menu-title">Navigation</li>
 					<li>
-						<a href="<?php echo base_url() ?>">
-							<i class="fe-activity"></i>
-							<span> Dashboards</span></a>
+						<a href="<?php echo base_url() ?>reports">
+							<i class="fe-download-cloud"></i>
+							<span> Reports</span></a>
 					</li>
 					<li>
 						<a href="<?php echo base_url() ?>users">
@@ -162,11 +168,6 @@
 						<a href="<?php echo base_url() ?>export">
 							<i class="fe-file-text"></i>
 							<span> Export Files</span></a>
-					</li>
-					<li>
-						<a href="<?php echo base_url() ?>reports">
-							<i class="fe-download-cloud"></i>
-							<span> Reports</span></a>
 					</li>
 					<li>
 						<a href="#sidebarIcons3" data-toggle="collapse">
