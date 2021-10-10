@@ -20,21 +20,58 @@ $error_text = "  text-danger ";
 					</div>
 				</div>
 			</div>
-			<div class="d-flex justify-content-between align-items-center">
-				<form class="" method="get" action="<?php echo base_url() ?>export">
-					<div class="input-group">
-						<input type="text" name="tax_id" class="form-control" placeholder="Tax Id"
-							   aria-label="Tax Id" required
-							   value="<?php echo $this->input->get('tax_id') ?>">
-						<div class="input-group-append">
-							<button class="btn btn-primary waves-effect waves-light" type="submit">Search</button>
-						</div>
-					</div>
-				</form>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="header-title">Search By Tax Id</h4>
+							<p class="text-muted font-13 mb-4">
+							<form class="" method="get" action="<?php echo base_url() ?>export">
+								<div class="input-group">
+									<input type="text" name="tax_id" class="form-control" placeholder="Tax Id"
+										   aria-label="Tax Id" required
+										   value="<?php echo $this->input->get('tax_id') ?>">
+									<div class="input-group-append">
+										<button class="btn btn-primary waves-effect waves-light" type="submit">Search</button>
+									</div>
+								</div>
+							</form>
+							</p>
+
+							<table id="basic-datatable" class="table dt-responsive nowrap w-100">
+								<thead>
+								<tr>
+									<th>Tax Id</th>
+									<th>Email</th>
+									<th>company Name </th>
+									<th>Phone</th>
+									<th>Company Type</th>
+								</tr>
+								</thead>
+
+
+								<tbody>
+								<?php if($user_data) { ?>
+									<tr>
+										<td><?php echo $user_data['tax_id']?></td>
+										<td><?php echo $user_data['email']?></td>
+										<td><?php echo $user_data['company_name']?></td>
+										<td><?php echo $user_data['phone']?></td>
+										<td><?php echo $user_data['company_type']?></td>
+									</tr>
+								<?php } ?>
+								</tbody>
+							</table>
+
+						</div> <!-- end card body-->
+					</div> <!-- end card -->
+				</div><!-- end col-->
 			</div>
+			<!-- end row-->
 
 			<div class="mt-3">
-				<h5 class="mb-2">Uploaded File</h5>
+				<h5 class="mb-2">Uploaded Files</h5>
 
 				<div class="row mx-n1 no-gutters">
 					<div class="col-xl-4 col-lg-4">
