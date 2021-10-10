@@ -63,6 +63,9 @@ class Navigation extends CI_Controller
 	public function reports()
 	{
 		$res = $this->process_model->get_statistics();
+		$user_data = $this->process_model->select_all('user_data');
+		$res['user_data'] = $user_data;
+
 		$this->load->view('template/header');
 		$this->load->view('report', $res);
 		$this->load->view('template/footer');

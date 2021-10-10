@@ -105,5 +105,47 @@
 				</div> <!-- end col-->
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="header-title">Uploaded Records</h4>
+
+						<table id="basic-datatable" class="table dt-responsive nowrap w-100">
+							<thead>
+							<tr>
+								<th>Tax Id</th>
+								<th>Email</th>
+								<th>Company Name </th>
+								<th>Phone</th>
+								<th>Company Type</th>
+								<th>Letter File</th>
+								<th>File A</th>
+								<th>File B</th>
+							</tr>
+							</thead>
+
+
+							<tbody>
+							<?php foreach ($user_data->result() as $row) { ?>
+								<tr>
+									<td><?php echo $row->tax_id?></td>
+									<td><?php echo $row->email?></td>
+									<td><?php echo $row->company_name?></td>
+									<td><?php echo $row->phone?></td>
+									<td><?php echo $row->company_type?></td>
+									<td style="display: flex; justify-content: center;"><?php echo  $row->letter_confirm ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
+									<td style="display: flex; justify-content: center;"><?php echo  $row->file_a ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
+									<td style="display: flex; justify-content: center;"><?php echo  $row->file_b ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
+								</tr>
+							<?php } ?>
+							</tbody>
+						</table>
+
+					</div> <!-- end card body-->
+				</div> <!-- end card -->
+			</div><!-- end col-->
+		</div>
+		<!-- end row-->
 	</div>
 </div>
