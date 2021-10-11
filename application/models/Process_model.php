@@ -62,6 +62,19 @@ class Process_model extends CI_Model
 		return $this->db->select('*')->from($table)->where($where)->get();
 	}
 
+	public function delete_where($table, $where)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	public function get_user_upload_record($tax_id = ''){
+
+		return $this->db->query("
+			SELECT * FROM user_data WHERE tax_id = '$tax_id' OR email = '$tax_id'
+		");
+
+	}
 
 	public function get_statistics()
 	{

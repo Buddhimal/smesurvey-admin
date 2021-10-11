@@ -32,7 +32,7 @@ class Navigation extends CI_Controller
 	public function export()
 	{
 		$tax_id = $this->input->get_post('tax_id');
-		$user_data = $this->process_model->select_where('user_data', array('tax_id' => $tax_id));
+		$user_data = $this->process_model->get_user_upload_record($tax_id);
 
 		$user_data = (array)$user_data->row();
 		$file1_path = "#";

@@ -41,15 +41,18 @@ class Process extends CI_Controller
 
 			foreach ($cutomer_imported as $key => $value) {
 
-				$saving_billing_data = array(
-					'company_name' => $value[0],
-					'tax_id' => $value[1],
-					'phone' => $value[2],
-					'email' => $value[3],
-					'company_type' => $value[4],
-					created_at => date('Y-m-d H:i:s')
-				);
+				$email_1 = explode(",", $value[10]);
+				$email_2 = explode(",", $value[11]);
 
+				$saving_billing_data = array(
+					'supplier_number' => $value[0],
+					'company_name' => $value[1],
+					'tax_id' => $value[3],
+					'email_remit' => $email_1[0],
+					'email' => $email_2[0],
+					'created_at' => date('Y-m-d H:i:s')
+				);
+				$this->process_model->delete_where('user_master_data', array('supplier_number' => $value[0]));
 				$this->process_model->insert('user_master_data', $saving_billing_data);
 
 			}
