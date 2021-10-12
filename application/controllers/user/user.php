@@ -34,11 +34,10 @@ class user extends CI_Controller
 
     public function add_new_sys_user_page()
     {
-        $this->load->view('header');
-        $this->load->view('top_header');
         $object['controller'] = $this;
         $object['active_tab'] = "user_list";
-        $this->load->view('top_menu',$object);
+//        $this->load->view('top_menu',$object);
+        $this->load->view('template/header',$object);
 
         if ($this->mloging->get_permission(SYS_USER_ADD_NEW_PAGE)) {
             $data['msg'] = "";
@@ -69,7 +68,7 @@ class user extends CI_Controller
         } else {
             $this->load->view('no_permission');
         }
-        $this->load->view('footer');
+        $this->load->view('template/footer');
     }
 
     public function check_valide_username()
