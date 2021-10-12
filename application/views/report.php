@@ -26,7 +26,7 @@
 							<div class="col-6">
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_user ?></span></h3>
-									<p class="text-muted mb-1 text-truncate">Total Users</p>
+									<p class="text-muted mb-1 text-truncate">Total Suppliers</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -43,8 +43,9 @@
 							</div>
 							<div class="col-6">
 								<div class="text-right">
-									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_uploads ?></span></h3>
-									<p class="text-muted mb-1 text-truncate">Total Uploads</p>
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_uploads ?></span>
+									</h3>
+									<p class="text-muted mb-1 text-truncate">Doc Upload Complete</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -55,14 +56,15 @@
 					<div class="widget-rounded-circle card-box">
 						<div class="row">
 							<div class="col-6">
-								<div class="avatar-lg rounded-circle bg-soft-success border-success border">
-									<i class="fe-check-circle font-22 avatar-title text-success"></i>
+								<div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
+									<i class="fa-exclamation-circle font-22 avatar-title text-danger"></i>
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="text-right">
-									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $full_complete ?></span></h3>
-									<p class="text-muted mb-1 text-truncate">Full completed</p>
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_user-$total_uploads ?></span>
+									</h3>
+									<p class="text-muted mb-1 text-truncate">Doc Upload Incomplete</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -79,14 +81,15 @@
 							</div>
 							<div class="col-6">
 								<div class="text-right">
-									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_a_upload ?></span></h3>
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_a_upload ?></span>
+									</h3>
 									<p class="text-muted mb-1 text-truncate">File A Uploaded</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
 					</div> <!-- end widget-rounded-circle-->
 				</div> <!-- end col-->
-			<div class="col-md-6 col-xl-3">
+				<div class="col-md-6 col-xl-3">
 					<div class="widget-rounded-circle card-box">
 						<div class="row">
 							<div class="col-6">
@@ -96,15 +99,87 @@
 							</div>
 							<div class="col-6">
 								<div class="text-right">
-									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_b_upload ?></span></h3>
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_b_upload ?></span>
+									</h3>
 									<p class="text-muted mb-1 text-truncate">File B Uploaded</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
 					</div> <!-- end widget-rounded-circle-->
 				</div> <!-- end col-->
+				<div class="col-md-6 col-xl-3">
+					<div class="widget-rounded-circle card-box">
+						<div class="row">
+							<div class="col-6">
+								<div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+									<i class="fe-bar-chart-line- font-22 avatar-title text-primary"></i>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="text-right">
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $sme_count ?></span></h3>
+									<p class="text-muted mb-1 text-truncate">SME Count</p>
+								</div>
+							</div>
+						</div> <!-- end row-->
+					</div> <!-- end widget-rounded-circle-->
+				</div> <!-- end col-->
+				<div class="col-md-6 col-xl-3">
+					<div class="widget-rounded-circle card-box">
+						<div class="row">
+							<div class="col-6">
+								<div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
+									<i class="fe-bar-chart-line- font-22 avatar-title text-warning"></i>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="text-right">
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $non_sme_count ?></span>
+									</h3>
+									<p class="text-muted mb-1 text-truncate">NON SME Count</p>
+								</div>
+							</div>
+						</div> <!-- end row-->
+					</div> <!-- end widget-rounded-circle-->
+				</div> <!-- end col-->
+				<div class="col-md-6 col-xl-3">
+					<div class="widget-rounded-circle card-box">
+						<div class="row">
+							<div class="col-6">
+								<div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
+									<i class="fa-exclamation-circle font-22 avatar-title text-danger"></i>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="text-right">
+									<h3 class="mt-1"><span
+												data-plugin="counterup"><?php echo $goods_count ?></span>
+									</h3>
+									<p class="text-muted mb-1 text-truncate">Goods/Factory Count</p>
+								</div>
+							</div>
+						</div> <!-- end row-->
+					</div> <!-- end widget-rounded-circle-->
+				</div> <!-- end col-->
+				<div class="col-md-6 col-xl-3">
+					<div class="widget-rounded-circle card-box">
+						<div class="row">
+							<div class="col-6">
+								<div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
+									<i class="fe-upload font-22 avatar-title text-warning"></i>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="text-right">
+									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_uploads ?></span>
+									</h3>
+									<p class="text-muted mb-1 text-truncate">Doc Upload Complete</p>
+								</div>
+							</div>
+						</div> <!-- end row-->
+					</div> <!-- end widget-rounded-circle-->
+				</div> <!-- end col-->
 			</div>
-		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
@@ -116,7 +191,7 @@
 							<tr>
 								<th>Tax Id</th>
 								<th>Email</th>
-								<th>Company Name </th>
+								<th>Company Name</th>
 								<th>Phone</th>
 								<th>Company Type</th>
 								<th>Letter File</th>
@@ -129,14 +204,14 @@
 							<tbody>
 							<?php foreach ($user_data->result() as $row) { ?>
 								<tr>
-									<td><?php echo $row->tax_id?></td>
-									<td><?php echo $row->email?></td>
-									<td><?php echo $row->company_name?></td>
-									<td><?php echo $row->phone?></td>
-									<td><?php echo $row->company_type?></td>
-									<td style="display: flex; justify-content: center;"><?php echo  $row->letter_confirm ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
-									<td style="display: flex; justify-content: center;"><?php echo  $row->file_a ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
-									<td style="display: flex; justify-content: center;"><?php echo  $row->file_b ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>'?></td>
+									<td><?php echo $row->tax_id ?></td>
+									<td><?php echo $row->email ?></td>
+									<td><?php echo $row->company_name ?></td>
+									<td><?php echo $row->phone ?></td>
+									<td><?php echo $row->company_type ?></td>
+									<td style="display: flex; justify-content: center;"><?php echo $row->letter_confirm ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+									<td style="display: flex; justify-content: center;"><?php echo $row->file_a ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+									<td style="display: flex; justify-content: center;"><?php echo $row->file_b ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
 								</tr>
 							<?php } ?>
 							</tbody>

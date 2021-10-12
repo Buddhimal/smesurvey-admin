@@ -127,22 +127,38 @@ class Process_model extends CI_Model
 
 		$data['full_complete'] = $res->num_rows();
 
-//		$res = $this->db->query("SELECT *
-//				FROM
-//					user_data
-//				WHERE
-//					user_data.company_type = 'SME'");
-//
-//		$data['sme_count'] = $res->num_rows();
-//
-//
-//		$res = $this->db->query("SELECT *
-//				FROM
-//					user_data
-//				WHERE
-//					user_data.company_type = 'SME'");
-//
-//		$data['sme_count'] = $res->num_rows();
+		$res = $this->db->query("SELECT *
+				FROM
+					user_data
+				WHERE
+					user_data.company_type = 'SME'");
+
+		$data['sme_count'] = $res->num_rows();
+
+
+		$res = $this->db->query("SELECT *
+				FROM
+					user_data
+				WHERE
+					user_data.company_type = 'NON SME'");
+
+		$data['non_sme_count'] = $res->num_rows();
+
+		$res = $this->db->query("SELECT *
+				FROM
+					user_data
+				WHERE
+					user_data.business_type = 'Goods/Factory'");
+
+		$data['goods_count'] = $res->num_rows();
+
+		$res = $this->db->query("SELECT *
+				FROM
+					user_data
+				WHERE
+					user_data.business_type = 'Services/Wholesale/Retails'");
+
+		$data['services_count'] = $res->num_rows();
 
 
 		return $data;
