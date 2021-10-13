@@ -51,7 +51,7 @@ class Process extends CI_Controller
 					'business_unit' => $business_unit,
 					'created_at' => date('Y-m-d H:i:s')
 				);
-				$this->process_model->delete_where('user_master_data', array('supplier_number' => $value[0]));
+				$this->process_model->delete_where('user_master_data', array('supplier_number' => $value[0], 'business_unit'=>$business_unit));
 				$this->process_model->insert('user_master_data', $saving_billing_data);
 
 			}
