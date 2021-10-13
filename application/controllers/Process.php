@@ -26,13 +26,11 @@ class Process extends CI_Controller
 	public function save_users()
 	{
 
-//		var_dump($_FILES);
-
+		$business_unit = $this->input->get_post('business_unit');
 		$csv = $_FILES['users']['tmp_name'];
 		$handle = fopen($csv, "r");
 		$cutomer_imported = array();
 		while (($row = fgetcsv($handle, 10000, ",")) != FALSE) {
-			//            print_r($row);
 			$cutomer_imported[] = $row;
 		}
 
@@ -50,6 +48,7 @@ class Process extends CI_Controller
 					'tax_id' => $value[3],
 					'email_remit' => $email_1[0],
 					'email' => $email_2[0],
+					'business_unit' => $business_unit,
 					'created_at' => date('Y-m-d H:i:s')
 				);
 				$this->process_model->delete_where('user_master_data', array('supplier_number' => $value[0]));

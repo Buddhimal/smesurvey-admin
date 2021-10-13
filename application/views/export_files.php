@@ -29,6 +29,14 @@ $error_text = "  text-danger ";
 							<p class="text-muted font-13 mb-4">
 							<form class="" method="get" action="<?php echo base_url() ?>export">
 								<div class="input-group">
+									<select name="business_unit" id="business_unit" class="form-control" required>
+										<option value="" selected>Select Business Unit</option>
+										<?php foreach ($business_units->result() as $row) { ?>
+											<option value="<?php  echo $row->id ?>"
+													<?php echo $this->input->get('business_unit') == $row->id ? "selected" : ""?>
+											><?php echo $row->business_unit?></option>
+										<?php } ?>
+									</select>
 									<input type="text" name="tax_id" class="form-control" placeholder="Tax Id"
 										   aria-label="Tax Id" required
 										   value="<?php echo $this->input->get('tax_id') ?>">

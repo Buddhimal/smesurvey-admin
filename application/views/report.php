@@ -14,6 +14,26 @@
 			</div>
 			<!-- end page title -->
 
+			<div class="col-md-12">
+				<form class="" method="get" action="<?php echo base_url() ?>reports">
+					<div class="input-group">
+						<select name="business_unit" id="business_unit" class="form-control" required>
+							<option value="" selected>Select Business Unit</option>
+							<?php foreach ($business_units->result() as $row) { ?>
+								<option value="<?php echo $row->id ?>"
+										<?php echo $this->input->get('business_unit') == $row->id ? "selected" : "" ?>
+								><?php echo $row->business_unit ?></option>
+							<?php } ?>
+						</select>
+						<div class="input-group-append">
+							<button class="btn btn-primary waves-effect waves-light" type="submit">Search</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<br>
+			<br>
+
 			<div class="row">
 				<div class="col-md-6 col-xl-3">
 					<div class="widget-rounded-circle card-box">

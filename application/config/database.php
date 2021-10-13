@@ -99,10 +99,10 @@ if (ENVIRONMENT === 'production') {
 } else{
 	$db['default'] = array(
 		'dsn' => '',
-		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => 'root',
-		'database' => 'wizard',
+		'hostname' => 'smedoc.digitalgateways.co',
+		'username' => 'smesurvey',
+		'password' => 'smesurvey@123',
+		'database' => 'smesurvey',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,

@@ -42,9 +42,23 @@
 					</body>
 					<div class="row">
 						<div class="col-md-12">
+
 							<form class="" action="<?php echo base_url() ?>upload_users"
 								  id="frm_users" method="POST"
 								  enctype="multipart/form-data">
+
+								<div class="input-group">
+									<select name="business_unit" id="business_unit" class="form-control" required>
+										<option value="" selected>Select Business Unit</option>
+										<?php foreach ($business_units->result() as $row) { ?>
+											<option value="<?php echo $row->id ?>"
+													<?php echo $this->input->get('business_unit') == $row->id ? "selected" : "" ?>
+											><?php echo $row->business_unit ?></option>
+										<?php } ?>
+									</select>
+								</div>
+								<br>
+								<br>
 								<input type="file" name="users" data-plugins="dropify" required
 									   data-allowed-file-extensions='["csv"]'/>
 								<p class="text-muted text-center mt-2 mb-0">

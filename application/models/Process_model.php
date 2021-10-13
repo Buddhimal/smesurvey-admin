@@ -68,17 +68,17 @@ class Process_model extends CI_Model
 		$this->db->delete($table);
 	}
 
-	public function get_user_upload_record($tax_id = ''){
+	public function get_user_upload_record($tax_id = '', $business_unit =''){
 
 		return $this->db->query("
-			SELECT * FROM user_data WHERE tax_id = '$tax_id' OR email = '$tax_id'
+			SELECT * FROM user_data WHERE business_unit = '$business_unit' AND (tax_id = '$tax_id' OR email = '$tax_id')
 		");
 
 	}
 
-	public function get_statistics()
+	public function get_statistics($business_unit = '1')
 	{
-		$res = $this->db->query("select DISTINCT email, tax_id from user_master_data");
+		$res = $this->db->query("select DISTINCT email, tax_id from user_master_data WHERE business_unit = '$business_unit'");
 		$data['total_user'] = $res->num_rows();
 
 		$res = $this->db->query("SELECT DISTINCT
@@ -87,7 +87,9 @@ class Process_model extends CI_Model
 		FROM
 			user_master_data
 			INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
-			AND user_master_data.email = user_data.email");
+			AND user_master_data.email = user_data.email
+			WHERE user_data.business_unit = '$business_unit'
+			");
 
 		$data['total_uploads'] = $res->num_rows();
 
@@ -98,7 +100,7 @@ class Process_model extends CI_Model
 					user_master_data
 					INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
 					AND user_master_data.email = user_data.email 
-				WHERE user_data.file_a != ''");
+				WHERE user_data.file_a != '' AND user_data.file_b ='' AND user_data.business_unit = '$business_unit'");
 
 		$data['file_a_upload'] = $res->num_rows();
 
@@ -109,7 +111,7 @@ class Process_model extends CI_Model
 					user_master_data
 					INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
 					AND user_master_data.email = user_data.email 
-				WHERE user_data.file_b != ''");
+				WHERE user_data.file_b != '' AND user_data.file_a = '' AND user_data.business_unit = '$business_unit'");
 
 		$data['file_b_upload'] = $res->num_rows();
 
@@ -123,7 +125,8 @@ class Process_model extends CI_Model
 				WHERE
 					user_data.letter_confirm != '' 
 					AND user_data.file_a != ''
-					AND user_data.file_b != ''");
+					AND user_data.file_b != ''
+					AND user_data.business_unit = '$business_unit'");
 
 		$data['full_complete'] = $res->num_rows();
 
@@ -131,7 +134,7 @@ class Process_model extends CI_Model
 				FROM
 					user_data
 				WHERE
-					user_data.company_type = 'SME'");
+					user_data.company_type = 'SME' AND user_data.business_unit = '$business_unit'");
 
 		$data['sme_count'] = $res->num_rows();
 
@@ -140,7 +143,7 @@ class Process_model extends CI_Model
 				FROM
 					user_data
 				WHERE
-					user_data.company_type = 'NON SME'");
+					user_data.company_type = 'NON SME' AND user_data.business_unit = '$business_unit'");
 
 		$data['non_sme_count'] = $res->num_rows();
 
@@ -148,7 +151,7 @@ class Process_model extends CI_Model
 				FROM
 					user_data
 				WHERE
-					user_data.business_type = 'Goods/Factory'");
+					user_data.business_type = 'Goods/Factory' AND user_data.business_unit = '$business_unit'");
 
 		$data['goods_count'] = $res->num_rows();
 
@@ -156,7 +159,7 @@ class Process_model extends CI_Model
 				FROM
 					user_data
 				WHERE
-					user_data.business_type = 'Services/Wholesale/Retails'");
+					user_data.business_type = 'Services/Wholesale/Retails' AND user_data.business_unit = '$business_unit'");
 
 		$data['services_count'] = $res->num_rows();
 

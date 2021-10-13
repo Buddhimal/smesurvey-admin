@@ -155,7 +155,7 @@
 
 					<li class="menu-title">Navigation</li>
 					<li>
-						<a href="<?php echo base_url() ?>reports">
+						<a href="<?php echo base_url() ?>reports?business_unit=1">
 							<i class="fe-download-cloud"></i>
 							<span> Reports</span></a>
 					</li>

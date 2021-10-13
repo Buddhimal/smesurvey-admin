@@ -25,14 +25,18 @@ class Navigation extends CI_Controller
 	public function users()
 	{
 		$this->load->view('template/header');
-		$this->load->view('users_upload');
+		$business_units = $this->process_model->select_all("business_units");
+		$data['business_units'] = $business_units;
+		$this->load->view('users_upload',$data);
 		$this->load->view('template/footer');
 	}
 
 	public function export()
 	{
 		$tax_id = $this->input->get_post('tax_id');
-		$user_data = $this->process_model->get_user_upload_record($tax_id);
+		$business_unit = $this->input->get_post('business_unit');
+		$user_data = $this->process_model->get_user_upload_record($tax_id, $business_unit);
+		$business_units = $this->process_model->select_all("business_units");
 
 		$user_data = (array)$user_data->row();
 		$file1_path = "#";
@@ -54,6 +58,7 @@ class Navigation extends CI_Controller
 		$data['file1_path'] = $file1_path;
 		$data['file2_path'] = $file2_path;
 		$data['file3_path'] = $file3_path;
+		$data['business_units'] = $business_units;
 
 		$this->load->view('template/header');
 		$this->load->view('export_files', $data);
@@ -62,9 +67,17 @@ class Navigation extends CI_Controller
 
 	public function reports()
 	{
-		$res = $this->process_model->get_statistics();
-		$user_data = $this->process_model->select_all('user_data');
+		$business_unit = $this->input->get_post('business_unit');
+
+		if(!$business_unit){
+			$business_unit = 1;
+		}
+
+		$res = $this->process_model->get_statistics($business_unit);
+		$user_data = $this->process_model->select_where('user_data',array('business_unit'=>$business_unit));
+		$business_units = $this->process_model->select_all("business_units");
 		$res['user_data'] = $user_data;
+		$res['business_units'] = $business_units;
 
 		$this->load->view('template/header');
 		$this->load->view('report', $res);
