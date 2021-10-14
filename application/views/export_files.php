@@ -37,8 +37,8 @@ $error_text = "  text-danger ";
 											><?php echo $row->business_unit?></option>
 										<?php } ?>
 									</select>
-									<input type="text" name="tax_id" class="form-control" placeholder="Tax Id"
-										   aria-label="Tax Id" required
+									<input type="text" name="tax_id" class="form-control" placeholder="Tax Id or Email"
+										   aria-label="Tax Id or Email" required style="margin-left: 10px;"
 										   value="<?php echo $this->input->get('tax_id') ?>">
 									<div class="input-group-append">
 										<button class="btn btn-primary waves-effect waves-light" type="submit">Search</button>

@@ -38,11 +38,16 @@
 		  rel="stylesheet" type="text/css"/>
 	<link href="<?php echo base_url(); ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
 		  rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url(); ?>/assets/libs/datatables.net-select-bs4/css//select.bootstrap4.min.css"
+	<link href="<?php echo base_url(); ?>/assets/libs/datatables.net-select-bs4/css/select.bootstrap4.min.css"
 		  rel="stylesheet" type="text/css"/>
 	<!-- third party css end -->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!-- App css -->
+	<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"
+		  id="bs-default-stylesheet"/>
+	<link href="<?php echo base_url(); ?>/assets/css/app.min.css" rel="stylesheet" type="text/css"
+		  id="app-default-stylesheet"/>
 </head>
 
 <style>

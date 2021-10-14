@@ -82,7 +82,8 @@
 							</div>
 							<div class="col-6">
 								<div class="text-right">
-									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_user-$total_uploads ?></span>
+									<h3 class="mt-1"><span
+												data-plugin="counterup"><?php echo $total_user - $total_uploads ?></span>
 									</h3>
 									<p class="text-muted mb-1 text-truncate">Doc Upload Incomplete</p>
 								</div>
@@ -200,47 +201,89 @@
 					</div> <!-- end widget-rounded-circle-->
 				</div> <!-- end col-->
 			</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="header-title">Uploaded Records</h4>
 
-						<table id="basic-datatable" class="table dt-responsive nowrap w-100">
-							<thead>
-							<tr>
-								<th>Tax Id</th>
-								<th>Email</th>
-								<th>Company Name</th>
-								<th>Phone</th>
-								<th>Company Type</th>
-								<th>Letter File</th>
-								<th>File A</th>
-								<th>File B</th>
-							</tr>
-							</thead>
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="header-title">Export Widgets</h4>
 
-
-							<tbody>
-							<?php foreach ($user_data->result() as $row) { ?>
+							<table id="datatable-buttons" class="table dt-responsive nowrap w-100">
+								<thead>
 								<tr>
-									<td><?php echo $row->tax_id ?></td>
-									<td><?php echo $row->email ?></td>
-									<td><?php echo $row->company_name ?></td>
-									<td><?php echo $row->phone ?></td>
-									<td><?php echo $row->company_type ?></td>
-									<td style="display: flex; justify-content: center;"><?php echo $row->letter_confirm ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
-									<td style="display: flex; justify-content: center;"><?php echo $row->file_a ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
-									<td style="display: flex; justify-content: center;"><?php echo $row->file_b ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+									<th>Total Suppliers</th>
+									<th>Doc Upload Complete</th>
+									<th>Doc Upload Incomplete</th>
+									<th>File A Uploaded</th>
+									<th>File B Uploaded</th>
+									<th>SME Count</th>
+									<th>NON SME Count</th>
+									<th>Goods/Factory Count</th>
+									<th>Services/Wholesale/Retails Count</th>
 								</tr>
-							<?php } ?>
-							</tbody>
-						</table>
+								</thead>
 
-					</div> <!-- end card body-->
-				</div> <!-- end card -->
-			</div><!-- end col-->
+
+								<tbody>
+								<tr>
+									<td><?php echo $total_user ?></td>
+									<td><?php echo $total_uploads ?></td>
+									<td><?php echo $total_user - $total_uploads ?></td>
+									<td><?php echo $file_a_upload ?></td>
+									<td><?php echo $file_b_upload ?></td>
+									<td><?php echo $sme_count ?></td>
+									<td><?php echo $non_sme_count ?></td>
+									<td><?php echo $goods_count ?></td>
+									<td><?php echo $services_count ?></td>
+								</tr>
+								</tbody>
+							</table>
+
+						</div> <!-- end card body-->
+					</div> <!-- end card -->
+				</div><!-- end col-->
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="header-title">Uploaded Records</h4>
+
+							<table id="basic-datatable" class="table dt-responsive nowrap w-100">
+								<thead>
+								<tr>
+									<th>Tax Id</th>
+									<th>Email</th>
+									<th>Company Name</th>
+									<th>Phone</th>
+									<th>Company Type</th>
+									<th>Letter File</th>
+									<th>File A</th>
+									<th>File B</th>
+								</tr>
+								</thead>
+
+
+								<tbody>
+								<?php foreach ($user_data->result() as $row) { ?>
+									<tr>
+										<td><?php echo $row->tax_id ?></td>
+										<td><?php echo $row->email ?></td>
+										<td><?php echo $row->company_name ?></td>
+										<td><?php echo $row->phone ?></td>
+										<td><?php echo $row->company_type ?></td>
+										<td style="display: flex; justify-content: center;"><?php echo $row->letter_confirm ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+										<td style="display: flex; justify-content: center;"><?php echo $row->file_a ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+										<td style="display: flex; justify-content: center;"><?php echo $row->file_b ? '<span class="badge badge-success badge-pill">Uploaded</span>' : '<span class="badge badge-danger badge-pill">Not Uploaded</span>' ?></td>
+									</tr>
+								<?php } ?>
+								</tbody>
+							</table>
+
+						</div> <!-- end card body-->
+					</div> <!-- end card -->
+				</div><!-- end col-->
+			</div>
+			<!-- end row-->
 		</div>
-		<!-- end row-->
 	</div>
-</div>

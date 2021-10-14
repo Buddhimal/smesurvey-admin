@@ -4,16 +4,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <!-- Footer Start -->
 <footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> &copy; SME System
-            </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<script>
+					document.write(new Date().getFullYear())
+				</script> &copy; SME System
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </footer>
 <!-- end Footer -->
 
@@ -31,12 +31,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="rightbar-overlay"></div>
 
 <!-- Vendor js -->
-<script src="<?php echo base_url()?>assets/js/vendor.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/vendor.min.js"></script>
 <!-- Plugin js-->
-<script src="<?php echo base_url()?>assets/libs/parsleyjs/parsley.min.js"></script>
+<script src="<?php echo base_url() ?>assets/libs/parsleyjs/parsley.min.js"></script>
 
 <!-- Validation init js-->
-<script src="<?php echo base_url()?>assets/js/pages/form-validation.init.js"></script>
+<script src="<?php echo base_url() ?>assets/js/pages/form-validation.init.js"></script>
 
 <!-- Plugins js-->
 <script src="<?php echo base_url(); ?>assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
@@ -82,9 +82,53 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>/assets/libs/pdfmake/build/vfs_fonts.js"></script>
 <!--<script src="--><?php //echo base_url(); ?><!--assets/libs/footable/footable.all.min.js"></script>-->
 <!--<script src="--><?php //echo base_url(); ?><!--assets/js/pages/foo-tables.init.js"></script>-->
-<script src="<?php echo base_url(); ?>/assets/js/pages/datatables.init.js"></script>
+<!--<script src="--><?php //echo base_url(); ?><!--/assets/js/pages/datatables.init.js"></script>-->
 <!-- third party js ends -->
 
 </body>
+
+<script>
+
+	$(document).ready(function() {
+		$("#basic-datatable").DataTable({
+			language: {
+				paginate: {
+					previous: "<i class='mdi mdi-chevron-left'>",
+					next: "<i class='mdi mdi-chevron-right'>"
+				}
+			},
+			drawCallback: function() {
+				$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
+			}
+		});
+		var a = $("#datatable-buttons").DataTable({
+			lengthChange: !1,
+			buttons: [{
+				extend: "copy",
+				className: "btn-light"
+			}, {
+				extend: "csv",
+				className: "btn-light"
+			}, {
+				extend: "pdf",
+				className: "btn-light"
+			}, {
+				extend: "excel",
+				className: "btn-light"
+			}],
+			language: {
+				paginate: {
+					previous: "<i class='mdi mdi-chevron-left'>",
+					next: "<i class='mdi mdi-chevron-right'>"
+				}
+			},
+			drawCallback: function() {
+				$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
+			}
+		});
+		a.buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)");
+	});
+
+</script>
 
 </html>
