@@ -78,7 +78,7 @@ class Process_model extends CI_Model
 
 	public function get_statistics($business_unit = '1')
 	{
-		$res = $this->db->query("select DISTINCT email, tax_id from user_master_data WHERE business_unit = '$business_unit'");
+		$res = $this->db->query("select email, tax_id from user_master_data WHERE business_unit = '$business_unit'");
 		$data['total_user'] = $res->num_rows();
 
 		$res = $this->db->query("SELECT DISTINCT
