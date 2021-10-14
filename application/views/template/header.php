@@ -101,7 +101,7 @@
 						<div class="dropdown-divider"></div>
 
 						<!-- item-->
-						<a href="<?php echo base_url() ?>/Login" class="dropdown-item notify-item">
+						<a href="<?php echo base_url() ?>logout" class="dropdown-item notify-item">
 							<i class="fe-log-out"></i>
 							<span>Logout</span>
 						</a>

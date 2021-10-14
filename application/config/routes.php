@@ -55,6 +55,7 @@ $route['default_controller'] = 'navigation';
 $route['dashboard'] = 'welcome/dashboard';
 $route['auth'] = 'welcome/check_login';
 $route['login'] = 'welcome/login';
+$route['logout'] = 'welcome/logout';
 $route['users'] = 'navigation/users';
 $route['upload_users'] = 'process/save_users';
 $route['export'] = 'navigation/export';
