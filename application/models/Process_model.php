@@ -81,47 +81,39 @@ class Process_model extends CI_Model
 		$res = $this->db->query("select email, tax_id from user_master_data WHERE business_unit = '$business_unit'");
 		$data['total_user'] = $res->num_rows();
 
-		$res = $this->db->query("SELECT DISTINCT
-			user_master_data.email,
-			user_master_data.tax_id 
-		FROM
-			user_master_data
-			INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
-			AND user_master_data.email = user_data.email
+		$res = $this->db->query("SELECT
+			user_data.email,
+			user_data.tax_id 
+			FROM
+			user_data 
 			WHERE user_data.business_unit = '$business_unit'
 			");
 
 		$data['total_uploads'] = $res->num_rows();
 
-		$res = $this->db->query("SELECT DISTINCT
-					user_master_data.email,
-					user_master_data.tax_id 
-				FROM
-					user_master_data
-					INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
-					AND user_master_data.email = user_data.email 
+		$res = $this->db->query("SELECT
+			user_data.email,
+			user_data.tax_id 
+		FROM
+			user_data 
 				WHERE user_data.file_a != '' AND user_data.file_b ='' AND user_data.business_unit = '$business_unit'");
 
 		$data['file_a_upload'] = $res->num_rows();
 
-		$res = $this->db->query("SELECT DISTINCT
-					user_master_data.email,
-					user_master_data.tax_id 
-				FROM
-					user_master_data
-					INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
-					AND user_master_data.email = user_data.email 
+		$res = $this->db->query("SELECT
+			user_data.email,
+			user_data.tax_id 
+		FROM
+			user_data 
 				WHERE user_data.file_b != '' AND user_data.file_a = '' AND user_data.business_unit = '$business_unit'");
 
 		$data['file_b_upload'] = $res->num_rows();
 
-		$res = $this->db->query("SELECT DISTINCT
-					user_master_data.email,
-					user_master_data.tax_id 
+		$res = $this->db->query("SELECT
+					user_data.email,
+					user_data.tax_id 
 				FROM
-					user_master_data
-					INNER JOIN user_data ON user_master_data.tax_id = user_data.tax_id 
-					AND user_master_data.email = user_data.email 
+					user_data 
 				WHERE
 					user_data.letter_confirm != '' 
 					AND user_data.file_a != ''
