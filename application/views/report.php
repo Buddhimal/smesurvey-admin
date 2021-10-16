@@ -65,7 +65,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_uploads ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Doc Upload Complete</p>
+									<p class="text-muted mb-1 text-truncate">Letter Upload completion </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -85,7 +85,7 @@
 									<h3 class="mt-1"><span
 												data-plugin="counterup"><?php echo $total_user - $total_uploads ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Doc Upload Incomplete</p>
+									<p class="text-muted mb-1 text-truncate">Letter Upload Incompletion</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -104,7 +104,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_a_upload ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">File A Uploaded</p>
+									<p class="text-muted mb-1 text-truncate">Por Ngor Dor 1 </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -122,7 +122,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_b_upload ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">File B Uploaded</p>
+									<p class="text-muted mb-1 text-truncate">Financial Doc Uploaded </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
