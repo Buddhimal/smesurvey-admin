@@ -74,7 +74,7 @@ $error_text = "  text-danger ";
 							</table>
 							<?php if($user_data) { ?>
 							<br>
-							<a href="<?php echo base_url()?>export/delete?id=<?php echo $user_data['id']?>" class="btn btn-danger float-right">Delete Record</a>
+							<button onclick="deleteRecord('<?php echo $user_data['id']?>')" class="btn btn-danger float-right">Delete Record</button>
 							<?php } ?>
 						</div> <!-- end card body-->
 					</div> <!-- end card -->

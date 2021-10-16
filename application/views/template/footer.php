@@ -129,6 +129,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		a.buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)");
 	});
 
+	function deleteRecord(id){
+		var url="<?php echo base_url()?>export/delete?id="+id
+		Swal.fire({
+			icon:'warning',
+			title: 'Do you want to delete this record?',
+			showCancelButton: true,
+			confirmButtonText: 'Delete',
+		}).then((result) => {
+			/* Read more about isConfirmed, isDenied below */
+			if (result.isConfirmed) {
+				location.href = url;
+			}
+		})
+	}
+
 </script>
 
 </html>

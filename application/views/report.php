@@ -212,10 +212,10 @@
 								<thead>
 								<tr>
 									<th>Total Suppliers</th>
-									<th>Doc Upload Complete</th>
-									<th>Doc Upload Incomplete</th>
-									<th>File A Uploaded</th>
-									<th>File B Uploaded</th>
+									<th>Letter Upload completion</th>
+									<th>Letter Upload Incompletion</th>
+									<th>File A : ภงด.1  (Por Ngor Dor 1)</th>
+									<th>File B : งบการเงินล่าสุด (Latest Financial Doc)</th>
 									<th>SME Count</th>
 									<th>NON SME Count</th>
 									<th>Goods/Factory Count</th>
@@ -258,8 +258,8 @@
 									<th>Phone</th>
 									<th>Company Type</th>
 									<th>Letter File</th>
-									<th>File A</th>
-									<th>File B</th>
+									<th>File A : ภงด.1  (Por Ngor Dor 1)</th>
+									<th>File B : งบการเงินล่าสุด (Latest Financial Doc)</th>
 								</tr>
 								</thead>
 
