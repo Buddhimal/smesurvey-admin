@@ -59,6 +59,7 @@ $route['logout'] = 'welcome/logout';
 $route['users'] = 'navigation/users';
 $route['upload_users'] = 'process/save_users';
 $route['export'] = 'navigation/export';
+$route['export/delete'] = 'process/delete';
 $route['reports'] = 'navigation/reports';
 
 

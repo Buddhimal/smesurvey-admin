@@ -20,6 +20,7 @@ $error_text = "  text-danger ";
 					</div>
 				</div>
 			</div>
+			<?php $this->load->view('template/alert_message')?>
 
 			<div class="row">
 				<div class="col-12">
@@ -71,7 +72,10 @@ $error_text = "  text-danger ";
 								<?php } ?>
 								</tbody>
 							</table>
-
+							<?php if($user_data) { ?>
+							<br>
+							<a href="<?php echo base_url()?>export/delete?id=<?php echo $user_data['id']?>" class="btn btn-danger float-right">Delete Record</a>
+							<?php } ?>
 						</div> <!-- end card body-->
 					</div> <!-- end card -->
 				</div><!-- end col-->
