@@ -249,7 +249,7 @@
 						<div class="card-body">
 							<h4 class="header-title">Uploaded Records</h4>
 
-							<table id="basic-datatable" class="table dt-responsive nowrap w-100">
+							<table id="datatable-buttons2" class="table dt-responsive nowrap w-100">
 								<thead>
 								<tr>
 									<th>Tax Id</th>

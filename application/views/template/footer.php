@@ -127,6 +127,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			}
 		});
 		a.buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)");
+
+		var b = $("#datatable-buttons2").DataTable({
+			lengthChange: !1,
+			buttons: [{
+				extend: "copy",
+				className: "btn-light"
+			}, {
+				extend: "csv",
+				className: "btn-light"
+			}, {
+				extend: "pdf",
+				className: "btn-light"
+			}, {
+				extend: "excel",
+				className: "btn-light"
+			}],
+			language: {
+				paginate: {
+					previous: "<i class='mdi mdi-chevron-left'>",
+					next: "<i class='mdi mdi-chevron-right'>"
+				}
+			},
+			drawCallback: function() {
+				$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
+			}
+		});
+		b.buttons().container().appendTo("#datatable-buttons2_wrapper .col-md-6:eq(0)");
+
 	});
 
 	function deleteRecord(id){
