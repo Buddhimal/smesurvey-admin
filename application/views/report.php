@@ -65,7 +65,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $total_uploads ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Letter Upload completion </p>
+									<p class="text-muted mb-1 text-truncate">SMELetter Upload completion </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -85,7 +85,7 @@
 									<h3 class="mt-1"><span
 												data-plugin="counterup"><?php echo $total_user - $total_uploads ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Letter Upload Incompletion</p>
+									<p class="text-muted mb-1 text-truncate">SMELetter Upload Incompletion</p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -104,7 +104,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_a_upload ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Por Ngor Dor 1 </p>
+									<p class="text-muted mb-1 text-truncate">PorNgorDor1 </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -122,7 +122,7 @@
 								<div class="text-right">
 									<h3 class="mt-1"><span data-plugin="counterup"><?php echo $file_b_upload ?></span>
 									</h3>
-									<p class="text-muted mb-1 text-truncate">Financial Doc Uploaded </p>
+									<p class="text-muted mb-1 text-truncate">FinancialDoc Uploaded </p>
 								</div>
 							</div>
 						</div> <!-- end row-->
@@ -212,10 +212,10 @@
 								<thead>
 								<tr>
 									<th>Total Suppliers</th>
-									<th>Letter Upload completion</th>
-									<th>Letter Upload Incompletion</th>
-									<th>File A : ภงด.1  (Por Ngor Dor 1)</th>
-									<th>File B : งบการเงินล่าสุด (Latest Financial Doc)</th>
+									<th>SMELetter Upload completion</th>
+									<th>SMELetter Upload Incompletion</th>
+									<th>PorNgorDor1</th>
+									<th>FinancialDoc</th>
 									<th>SME Count</th>
 									<th>NON SME Count</th>
 									<th>Goods/Factory Count</th>
@@ -257,9 +257,9 @@
 									<th>Company Name</th>
 									<th>Phone</th>
 									<th>Company Type</th>
-									<th>Letter File</th>
-									<th>File A : ภงด.1  (Por Ngor Dor 1)</th>
-									<th>File B : งบการเงินล่าสุด (Latest Financial Doc)</th>
+									<th>SMELetter File</th>
+									<th>PorNgorDor1</th>
+									<th>FinancialDoc</th>
 								</tr>
 								</thead>
 
