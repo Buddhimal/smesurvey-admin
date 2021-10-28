@@ -82,7 +82,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>/assets/libs/pdfmake/build/vfs_fonts.js"></script>
 <!--<script src="--><?php //echo base_url(); ?><!--assets/libs/footable/footable.all.min.js"></script>-->
 <!--<script src="--><?php //echo base_url(); ?><!--assets/js/pages/foo-tables.init.js"></script>-->
-<!--<script src="--><?php //echo base_url(); ?><!--/assets/js/pages/datatables.init.js"></script>-->
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<!--<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>-->
+<!--<script src=""></script>-->
+<!--<script src=""></script>-->
 <!-- third party js ends -->
 
 </body>
@@ -110,11 +117,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				extend: "csv",
 				className: "btn-light"
 			}, {
-				extend: "pdf",
-				className: "btn-light"
-			}, {
 				extend: "excel",
-				className: "btn-light"
+				className: "btn-light",
 			}],
 			language: {
 				paginate: {
@@ -137,11 +141,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				extend: "csv",
 				className: "btn-light"
 			}, {
-				extend: "pdf",
-				className: "btn-light"
-			}, {
 				extend: "excel",
-				className: "btn-light"
+				className: "btn-light",
+				filename: 'Uploaded Records',
+				title: "Uploaded Records",
+				exportOptions: {
+					format: {
+						body: function (data, row, column, node ) {
+							switch(column){
+								case 0 :  return column === 0 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 1 :  return column === 1 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 2 :  return column === 2 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 3 :  return column === 3 ? "\0" + data : data; break;
+								case 4 :  return column === 4 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 5 :  return column === 5 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 6 :  return column === 6 ? data.replace(/<.*?>/ig, "") : data; break;
+								case 7 :  return column === 7 ? data.replace(/<.*?>/ig, "") : data; break;
+								default : return data; break;
+							}
+						}
+					}
+				}
 			}],
 			language: {
 				paginate: {
